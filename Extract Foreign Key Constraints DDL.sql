@@ -12,7 +12,7 @@ DECLARE cur CURSOR FOR
 SELECT	fk.name AS ForeignKeyName,
 		OBJECT_NAME(fk.parent_object_id) AS TableName,
 		STRING_AGG(col.name, ', ') AS ColumnName,
-		OBJECT_NAME(fkc.referenced_object_id) AS TableName,
+		OBJECT_NAME(fkc.referenced_object_id) AS ReferencedTableName,
 		STRING_AGG(ref.name, ', ') AS ReferencedColumnName,
 		fk.update_referential_action_desc,
 		fk.delete_referential_action_desc
